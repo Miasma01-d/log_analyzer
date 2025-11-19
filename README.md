@@ -33,11 +33,13 @@ The tool requires a path to a log file as input. Here are your options:
 
 Option 1: Use Included Sample Logs
 bash
-# Use the provided sample log file
+```# Use the provided sample log file
 python3 log_analyzer.py sample_logs/auth_sample.log
+```
 
 # Or use the simple test log
-python3 log_analyzer.py sample_logs/test_log.log
+```python3 log_analyzer.py sample_logs/test_log.log```
+
 Option 2: Use Your Own Log File
 bash
 # Provide path to your own log file
@@ -48,6 +50,7 @@ bash
 python3 log_analyzer.py /var/log/syslog
 python3 log_analyzer.py /var/log/secure
 ```
+
 Option 3: Create a Quick Test File
 bash
 ```# Create a simple test log
@@ -57,6 +60,7 @@ echo "Failed password for user test from 103.107.198.125" >> my_test.log
 ```
 # Analyze your test file
 ```python3 log_analyzer.py my_test.log```
+
 With Custom Blacklist
 bash
 ```# Use with the included blacklist
@@ -64,8 +68,9 @@ python3 log_analyzer.py sample_logs/auth_sample.log --blacklist blacklist.txt
 ```
 # Or with your own blacklist file
 ```python3 log_analyzer.py /path/to/your/logfile.log --blacklist my_ips.txt```
+
 Project Structure 🗂️
-text
+```text
 log_analyzer/
 ├── log_analyzer.py          # Main analysis script
 ├── README.md               # This file
@@ -73,7 +78,9 @@ log_analyzer/
 ├── blacklist.txt           # Example IP blacklist
 └── sample_logs/            # Sample log files for testing
     ├── auth_sample.log     # Sample authentication logs
-    └── test_log.log        # Simple test log file 
+    └── test_log.log        # Simple test log file
+```
+
 Example Output 📊
 ```text
 [!] Failed login detected from IP: 192.168.1.100 (Line 1)
@@ -96,6 +103,7 @@ The blacklist.txt file should contain one IP address per line:
 185.220.101.204
 45.95.147.229
 ```
+
 Supported Log Formats
 Linux auth.log (SSH failures)
 
